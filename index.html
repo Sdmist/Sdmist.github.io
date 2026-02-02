@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sdmist - Codeforces Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    
+    <div class="container">
+        <header>
+            <h1>Sdmist</h1>
+            <p class="subtitle">Codeforces Solutions</p>
+            <p class="description">A curated collection of problem solving approaches</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search by problem or code name"
+                    autocomplete="off"
+                >
+            </div>
+            
+            <div class="filter-box">
+                <div class="filter-label">Rating Range</div>
+                <div class="rating-inputs">
+                    <input 
+                        type="number" 
+                        id="minRating" 
+                        placeholder="Min" 
+                        min="0" 
+                        step="100"
+                    >
+                    <span>-</span>
+                    <input 
+                        type="number" 
+                        id="maxRating" 
+                        placeholder="Max" 
+                        min="0" 
+                        step="100"
+                    >
+                </div>
+                <div class="filter-buttons">
+                    <button id="filterBtn">Filter</button>
+                    <button id="resetBtn">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="problemsTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Problem</th>
+                        <th>Rating</th>
+                        <th>Code & Explanation</th>
+                    </tr>
+                </thead>
+                <tbody id="problemsBody">
+                    <!-- Problems will be loaded here -->
+                </tbody>
+            </table>
+
+            <div id="noResults" class="no-results" style="display: none;">
+                <p>No problems found matching your criteria</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+  {
+    "code": "4A",
+    "name": "Watermelon",
+    "rating": 800,
+    "hint": "It is not necessary that the parts should be equal.",
+    "solutionFile": "solutions/watermelon.py",
+    "explanation": "Any even weight w except 2 can be divided as 2 and w - 2. For example 10 as 8 and 2 or 16 as 14 and 2. However this is not possible for w = 2. For w = 2 only possible division is 1 and 1. We cannot do 2 and 0 since it is mentioned that each one should receive a positive. Any odd weight cannot be divided into two even parts as any odd number can't be sum of two even numbers."
+  },
+  {
+    "code": "71A",
+    "name": "Way Too Long Words",
+    "rating": 800,
+    "hint": "The number of letters between the first and the last letter is just length of the string - 2.",
+    "solutionFile": "solutions/WayTooLongWords.py",
+    "explanation": "We check if the length of the string is strictly greater than 10. If it is, then we access the first and last elements only and the number of letters between them is len(string) - 2. We print as required."
+  }
+]
