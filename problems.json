@@ -13,6 +13,17 @@
     "rating": 800,
     "hint": "The number of letters between the first and the last letter is just length of the string - 2.",
     "solutionFile": "solutions/WayTooLongWords.py",
-    "explanation": "We check if the length of the string is strictly greater than 10. If it is, then we access the first and last elements only and the number of letters between them is len(string) - 2. We print as required."
+    "explanation": "We check if the lengthd of the string is strictly greater than 10. If it is, then we access the first and last elements only and the number of letters between them is len(string) - 2. We print as required."
+  },
+  {
+    "code": "231A",
+    "name": "Team",
+    "rating": 800,
+    "hint": "We need the count the number of '1's in each query.",
+    "solutionFile": "solutions/Team.py",
+    "explanation": ["Each query can either be converted into a list or a string. Here we simply take the input as a string. The string taken as input is then, say, '1 0 1'. It contains the digits (as str) as well as the spaces. We need to only count the number of '1's. So we use string.count('1'). If we had taken as list we could use the same way list_name.count('1') {if the digtis are mapped as strs) or list_name.count(1) {if the digits are mapped as integers.", 
+
+    "Time Complexity: O(n)",
+    "Space Complexity: O(1)"]
   }
 ]
