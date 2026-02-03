@@ -5,7 +5,9 @@
     "rating": 800,
     "hint": "It is not necessary that the parts should be equal.",
     "solutionFile": "solutions/watermelon.py",
-    "explanation": "Any even weight w except 2 can be divided as 2 and w - 2. For example 10 as 8 and 2 or 16 as 14 and 2. However this is not possible for w = 2. For w = 2 only possible division is 1 and 1. We cannot do 2 and 0 since it is mentioned that each one should receive a positive. Any odd weight cannot be divided into two even parts as any odd number can't be sum of two even numbers."
+    "explanation": ["Any even weight w except 2 can be divided as 2 and w - 2. For example 10 as 8 and 2 or 16 as 14 and 2. However this is not possible for w = 2. For w = 2 only possible division is 1 and 1. We cannot do 2 and 0 since it is mentioned that each one should receive a positive. Any odd weight cannot be divided into two even parts as any odd number can't be sum of two even numbers. \n\n",
+      "Time Complexity: O(1) \n",
+      "Space Complexity: O(1) \n"]
   },
   {
     "code": "71A",
@@ -13,7 +15,10 @@
     "rating": 800,
     "hint": "The number of letters between the first and the last letter is just length of the string - 2.",
     "solutionFile": "solutions/WayTooLongWords.py",
-    "explanation": "We check if the lengthd of the string is strictly greater than 10. If it is, then we access the first and last elements only and the number of letters between them is len(string) - 2. We print as required."
+    "explanation": ["We check if the lengthd of the string is strictly greater than 10. If it is, then we access the first and last elements only and the number of letters between them is len(string) - 2. We print as required.\n\n", 
+      "Time Complexity: O(1)\n",
+      "Space Complexity: O(1)\n\n",
+      "Here n is more like the no. of test cases"]
   },
   {
     "code": "231A",
@@ -21,9 +26,9 @@
     "rating": 800,
     "hint": "We need the count the number of '1's in each query.",
     "solutionFile": "solutions/Team.py",
-    "explanation": ["Each query can either be converted into a list or a string. Here we simply take the input as a string. The string taken as input is then, say, '1 0 1'. It contains the digits (as str) as well as the spaces. We need to only count the number of '1's. So we use string.count('1'). If we had taken as list we could use the same way list_name.count('1') {if the digtis are mapped as strs) or list_name.count(1) {if the digits are mapped as integers.", 
+    "explanation": ["Each query can either be converted into a list or a string. Here we simply take the input as a string. The string taken as input is then, say, '1 0 1'. It contains the digits (as str) as well as the spaces. We need to only count the number of '1's. So we use string.count('1'). If we had taken as list we could use the same way list_name.count('1') {if the digtis are mapped as strs) or list_name.count(1) {if the digits are mapped as integers. \n\n", 
 
-    "Time Complexity: O(n)",
-    "Space Complexity: O(1)"]
+    "Time Complexity: O(n)\n",
+    "Space Complexity: O(1)\n"]
   }
 ]
