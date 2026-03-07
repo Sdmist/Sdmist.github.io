@@ -1,10 +1,12 @@
 import sys
 
-n = int(sys.stdin.readline())
+input = sys.stdin.readline
+
+n = int(input())
 count =  0
 for p in range(n):
-    string = sys.stdin.readline().strip()
-    if string.count("1") >= 2:
+    s = input().strip()
+    if s.count("1") >= 2:
         count += 1
 print(count)
 
