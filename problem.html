@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="problem-page">
     <canvas id="particleCanvas"></canvas>
     
     <div class="container problem-container">
         <nav class="problem-nav">
-            <button id="backBtn" class="nav-btn">Back to Problems</button>
+            <button id="backBtn" class="nav-btn">← Back to Problems</button>
             <div class="nav-controls">
-                <button id="prevBtn" class="nav-btn">Previous</button>
-                <button id="nextBtn" class="nav-btn">Next</button>
+                <button id="prevBtn" class="nav-btn">← Previous</button>
+                <button id="nextBtn" class="nav-btn">Next →</button>
             </div>
         </nav>
 
@@ -30,29 +32,54 @@
             </div>
 
             <div class="hint-section">
-                <div class="section-label">Hint</div>
+                <div class="section-label">💡 Hint</div>
                 <p id="detailHint">Loading...</p>
             </div>
 
             <div class="code-section">
                 <div class="section-header">
-                    <span class="section-label">Solution Code</span>
+                    <div class="language-selector">
+                        <span class="section-label">📝 Solution Code</span>
+                        <select id="languageSelect">
+                            <option value="">Loading...</option>
+                        </select>
+                    </div>
                     <button id="copyBtn" class="copy-btn">Copy Code</button>
                 </div>
                 <div class="code-wrapper">
-                    <pre><code class="language-python" id="detailSolution">Loading...</code></pre>
+                    <pre><code id="detailSolution">Loading...</code></pre>
+                </div>
+            </div>
+
+            <div class="complexity-section">
+                <div class="section-label">⚡ Complexity Analysis</div>
+                <div class="complexity-grid">
+                    <div class="complexity-item">
+                        <div class="complexity-label">Time Complexity</div>
+                        <div class="complexity-value" id="timeComplexity">Loading...</div>
+                    </div>
+                    <div class="complexity-item">
+                        <div class="complexity-label">Space Complexity</div>
+                        <div class="complexity-value" id="spaceComplexity">Loading...</div>
+                    </div>
                 </div>
             </div>
 
             <div class="explanation-section">
-                <div class="section-label">Explanation</div>
-                <p id="detailExplanation">Loading...</p>
+                <div class="section-label">💬 Explanation</div>
+                <div id="detailExplanation">Loading...</div>
             </div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/kotlin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
     <script src="problem.js"></script>
 </body>
 </html>
