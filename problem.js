@@ -171,34 +171,24 @@ function detectAvailableLanguages() {
     availableLanguages = [];
     const solutions = currentProblem.solutions || {};
     
-    const languagePromises = Object.keys(LANGUAGE_CONFIG).map(function(lang) {
-        if (solutions[lang]) {
-            return fetch(solutions[lang], { method: 'HEAD' })
-                .then(function() {
-                    availableLanguages.push(lang);
-                    return lang;
-                })
-                .catch(function() {
-                    return null;
-                });
+    Object.keys(solutions).forEach(function(lang) {
+        if (LANGUAGE_CONFIG[lang]) {
+            availableLanguages.push(lang);
         }
-        return Promise.resolve(null);
     });
-
-    Promise.all(languagePromises).then(function() {
-        if (availableLanguages.length === 0) {
-            availableLanguages = ['python'];
-        }
-        
-        if (!availableLanguages.includes('python') && availableLanguages.length > 0) {
-            currentLanguage = availableLanguages[0];
-        } else {
-            currentLanguage = 'python';
-        }
-        
-        populateLanguageSelector();
-        loadCode(currentLanguage);
-    });
+    
+    if (availableLanguages.length === 0) {
+        availableLanguages = ['python'];
+    }
+    
+    if (availableLanguages.includes('python')) {
+        currentLanguage = 'python';
+    } else {
+        currentLanguage = availableLanguages[0];
+    }
+    
+    populateLanguageSelector();
+    loadCode(currentLanguage);
 }
 
 function populateLanguageSelector() {
