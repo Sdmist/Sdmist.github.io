@@ -7,20 +7,26 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <canvas id="particleCanvas"></canvas>
     
     <div class="container">
         <header>
-            <h1>Sdmist</h1>
-            <p class="subtitle">Codeforces Solutions</p>
-            <p class="description">A curated collection of problem solving approaches</p>
+            <div class="header-content">
+                <h1>Sdmist</h1>
+                <p class="subtitle">Codeforces Solutions</p>
+                <p class="description">A curated collection of problem solving approaches</p>
+            </div>
         </header>
 
         <div class="controls">
             <div class="search-box">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12.5 12.5L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
                 <input 
                     type="text" 
                     id="searchInput" 
@@ -71,13 +77,39 @@
             </table>
 
             <div id="noResults" class="no-results" style="display: none;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 15s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke-linecap="round"/>
+                </svg>
                 <p>No problems found matching your criteria</p>
             </div>
+        </div>
+
+        <div id="pagination" class="pagination" style="display: none;">
+            <button id="prevPage" class="page-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+                Previous
+            </button>
+            
+            <div class="page-numbers" id="pageNumbers"></div>
+            
+            <div class="page-jump">
+                <span>Go to page:</span>
+                <input type="number" id="pageJump" min="1" placeholder="1">
+                <button id="jumpBtn">Go</button>
+            </div>
+            
+            <button id="nextPage" class="page-btn">
+                Next
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
         </div>
     </div>
 
     <script src="script.js"></script>
-
-Swipe to scroll ->
 </body>
 </html>
