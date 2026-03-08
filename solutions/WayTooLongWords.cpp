@@ -13,7 +13,7 @@ int main() {
 	    cin >> s;
 	    
 	    if (s.size() > 10) {
-	        cout << s[0] << s.size()-1 << s.back();
+	        cout << s[0] << s.size()-2 << s.back();
 	    }
 	    else {
 	        cout << s;
