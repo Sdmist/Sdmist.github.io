@@ -9,7 +9,7 @@
       "c": "solutions/watermelon.c", 
       "cpp": "solutions/watermelon.cpp" 
     },
-    "explanation": "Any even weight w except 2 can be divided as 2 and w - 2. For example 10 as 8 and 2 or 16 as 14 and 2.\n\nHowever this is not possible for w = 2. For w = 2 only possible division is 1 and 1. We cannot do 2 and 0 since it is mentioned that each one should receive a positive.\n\nAny odd weight cannot be divided into two even parts as any odd number can't be sum of two even numbers.",
+    "explanation": "Any even weight $w$ except $2$ can be divided as $2$ and $w - 2$. For example: \n  $10 = 8 + 2$ \n $16 = 14 + 2$ \n\nHowever this is not possible for $w = 2$. For $w = 2$ only possible division is $1 + 1$. We cannot do $2 + 0$ since it is mentioned that each one should receive a positive weight.\n\nAny odd weight cannot be divided into two even parts as any odd number can't be sum of two even numbers.",
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
   },
@@ -23,7 +23,21 @@
       "c": "solutions/WayTooLongWords.c",
       "cpp": "solutions/WayTooLongWords.cpp"
     },
-    "explanation": "We check if the length of the string is strictly greater than 10.\n\nIf it is, then we access the first and last elements only and the number of letters between them is len(string) - 2.\n\nWe print as required.",
+    "explanation": "We check if the length of the string is strictly greater than $10$.\n\nIf it is, then we access the first and last elements only and the number of letters between them is $len(string) - 2$.\n\nWe print as required.",
+    "timeComplexity": "O(n)",
+    "spaceComplexity": "O(1)"
+  }, 
+  {
+    "code": "231A",
+    "name": "Team",
+    "rating": 800,
+    "hint": "We only need to count the no. of $1$s in each query",
+    "solutions": {
+      "python": "solutions/Team.py",
+      "c": "solutions/Team.c",
+      "cpp": "solutions/Team.cpp"
+    },
+    "explanation": "The objective is to count the number of $1$s in each query. Each query can either be converted into a list or a string or simply a map. In Python, we can just use a map, since we need to access each element only once. \n\n In C and C++, we can count just as we take each input using cin.  \n\n In each query, when the count of $1$s is more than one, we increase the value of $ans$ by $1$. For each query we print the $ans$.",
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)"
   }
