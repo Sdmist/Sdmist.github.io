@@ -150,7 +150,9 @@ function loadProblemDetail() {
     document.getElementById('detailCode').textContent = currentProblem.code;
     document.getElementById('detailTitle').textContent = currentProblem.name;
     document.getElementById('detailRating').textContent = currentProblem.rating;
-    document.getElementById('detailHint').textContent = currentProblem.hint;
+    
+    const hintElement = document.getElementById('detailHint');
+    hintElement.textContent = currentProblem.hint;
     
     document.getElementById('timeComplexity').textContent = currentProblem.timeComplexity || 'N/A';
     document.getElementById('spaceComplexity').textContent = currentProblem.spaceComplexity || 'N/A';
@@ -159,7 +161,7 @@ function loadProblemDetail() {
     explanationDiv.innerHTML = '<p>' + currentProblem.explanation + '</p>';
     
     if (window.MathJax) {
-        MathJax.typesetPromise([explanationDiv]).catch(function(err) {
+        MathJax.typesetPromise([hintElement, explanationDiv]).catch(function(err) {
             console.log('MathJax error:', err);
         });
     }
