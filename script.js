@@ -251,7 +251,6 @@ function displayProblems() {
         row.innerHTML = '<td>' + problem.code + '</td>' +
             '<td><div class="problem-name-cell">' +
             '<span class="problem-name">' + problem.name + '</span>' +
-            '<span class="problem-hint-preview">(Hint)</span>' +
             '</div></td>' +
             '<td class="problem-rating-cell">' + problem.rating + '</td>' +
             '<td><button class="show-code-btn" data-index="' + allProblems.indexOf(problem) + '">' +
