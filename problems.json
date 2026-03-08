@@ -17,7 +17,7 @@
     "code": "71A",
     "name": "Way Too Long Words",
     "rating": 800,
-    "hint": "The number of letters between the first and the last letter is just length of the string - 2.",
+    "hint": "The number of letters between the first and the last letter is just length of the string - $2$.",
     "solutions": {
       "python": "solutions/WayTooLongWords.py",
       "c": "solutions/WayTooLongWords.c",
