@@ -1,7 +1,7 @@
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
-const particleCount = 100;
+const particleCount = 120;
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -12,10 +12,10 @@ class Particle {
     constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.5 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
-        this.opacity = Math.random() * 0.4 + 0.1;
+        this.size = Math.random() * 3 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.5 + 0.2;
         this.color = this.getColor();
     }
 
@@ -24,7 +24,8 @@ class Particle {
             'rgba(167, 139, 250, ',
             'rgba(240, 171, 252, ',
             'rgba(147, 197, 253, ',
-            'rgba(134, 239, 172, '
+            'rgba(134, 239, 172, ',
+            'rgba(253, 224, 71, '
         ];
         return colors[Math.floor(Math.random() * colors.length)];
     }
@@ -44,8 +45,8 @@ class Particle {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
         
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = this.color + '0.5)';
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = this.color + '0.8)';
         ctx.fill();
         ctx.shadowBlur = 0;
     }
@@ -73,9 +74,9 @@ function animateParticles() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 150) {
-                const opacity = (1 - distance / 150) * 0.1;
+                const opacity = (1 - distance / 150) * 0.12;
                 ctx.strokeStyle = 'rgba(167, 139, 250, ' + opacity + ')';
-                ctx.lineWidth = 1;
+                ctx.lineWidth = 1.5;
                 ctx.beginPath();
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -172,7 +173,7 @@ function detectAvailableLanguages() {
     const solutions = currentProblem.solutions || {};
     
     Object.keys(solutions).forEach(function(lang) {
-        if (LANGUAGE_CONFIG[lang]) {
+        if (LANGUAGE_CONFIG[lang] && solutions[lang]) {
             availableLanguages.push(lang);
         }
     });
@@ -216,26 +217,38 @@ function loadCode(language) {
     const filePath = solutions[language];
     
     if (!filePath) {
-        document.getElementById('detailSolution').textContent = '// No solution available for this language';
+        const codeElement = document.getElementById('detailSolution');
+        codeElement.textContent = '// No solution available for this language';
+        codeElement.className = '';
         return;
     }
 
     fetch(filePath)
-        .then(function(response) { return response.text(); })
+        .then(function(response) { 
+            if (!response.ok) {
+                throw new Error('File not found: ' + filePath);
+            }
+            return response.text(); 
+        })
         .then(function(code) {
             const codeElement = document.getElementById('detailSolution');
             codeElement.textContent = code;
             
             if (language === 'iylira') {
+                codeElement.className = '';
                 highlightIylira(codeElement);
             } else {
-                codeElement.className = 'language-' + LANGUAGE_CONFIG[language].hljs;
+                const langClass = LANGUAGE_CONFIG[language].hljs;
+                codeElement.className = 'language-' + langClass;
+                codeElement.removeAttribute('data-highlighted');
                 hljs.highlightElement(codeElement);
             }
         })
         .catch(function(error) {
             console.error('Error loading code:', error);
-            document.getElementById('detailSolution').textContent = '// Error loading code';
+            const codeElement = document.getElementById('detailSolution');
+            codeElement.textContent = '// Error loading code: ' + error.message;
+            codeElement.className = '';
         });
 }
 
@@ -248,27 +261,27 @@ function highlightIylira(codeElement) {
         'let', 'tlet',
         'while', 'for', 'drift', 'repeat', 'through',
         'in', 'not', 'true', 'false', 'True', 'False',
-        'send', 'return', 'make', 'get'
+        'send', 'return', 'make', 'get', 'times'
     ];
     
     let highlighted = code;
     
     highlighted = highlighted.replace(/#invite\s+\w+/g, function(match) {
-        return '<span style="color: #c678dd;">' + match + '</span>';
+        return '<span style="color: #c678dd; font-weight: 600;">' + match + '</span>';
     });
     
-    highlighted = highlighted.replace(/#def/g, '<span style="color: #c678dd;">#def</span>');
+    highlighted = highlighted.replace(/#def/g, '<span style="color: #c678dd; font-weight: 600;">#def</span>');
     
     keywords.forEach(function(keyword) {
         const regex = new RegExp('\\b' + keyword + '\\b', 'g');
-        highlighted = highlighted.replace(regex, '<span style="color: #c678dd;">' + keyword + '</span>');
+        highlighted = highlighted.replace(regex, '<span style="color: #c678dd; font-weight: 600;">' + keyword + '</span>');
     });
     
     highlighted = highlighted.replace(/(".*?"|'.*?')/g, '<span style="color: #98c379;">$1</span>');
     
     highlighted = highlighted.replace(/\b(\d+)\b/g, '<span style="color: #d19a66;">$1</span>');
     
-    highlighted = highlighted.replace(/(#.*$)/gm, '<span style="color: #5c6370;">$1</span>');
+    highlighted = highlighted.replace(/(#[^\n]*)/g, '<span style="color: #5c6370; font-style: italic;">$1</span>');
     
     codeElement.innerHTML = highlighted;
 }
