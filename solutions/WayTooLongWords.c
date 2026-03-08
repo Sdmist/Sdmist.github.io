@@ -5,6 +5,7 @@ int main() {
     int n;
     scanf("%d", &n);
     while (n--) {
+        //Size limit of s is 100; so we create size 105;
         char s[105];
         scanf("%s", s);
         
