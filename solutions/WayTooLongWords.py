@@ -10,4 +10,4 @@ for _ in range(n):
 Some other methods for printing:, 
 print("%s%i%s", s[0], len(s)-2, s[-1]), or 
 print(f"{s[0]}{len(s)-2}{s[-1]")
-
+"""
