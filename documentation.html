@@ -3,90 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problem - Sdmist</title>
+    <title>Documentation - Sdmist</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css">
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            }
-        };
-    </script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="problem-page">
+<body class="docs-page">
     <canvas id="particleCanvas"></canvas>
     
-    <div class="container problem-container">
-        <nav class="problem-nav">
-            <button id="backBtn" class="nav-btn">← Back to Problems</button>
-            <div class="nav-controls">
-                <button id="prevBtn" class="nav-btn">← Previous</button>
-                <button id="nextBtn" class="nav-btn">Next →</button>
+    <div class="docs-layout">
+        <aside class="docs-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="back-home-btn">← Back to Home</a>
             </div>
-        </nav>
+            <nav class="sidebar-nav">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#how-to-use">How to Use</a></li>
+                    <li><a href="#adding-solutions">Adding Your Solutions</a></li>
+                    <li><a href="#multi-language">Multi-Language Support</a></li>
+                    <li><a href="#latex-math">Using LaTeX Math</a></li>
+                    <li><a href="#customization">Customization</a></li>
+                    <li><a href="#license">License & Terms</a></li>
+                    <li><a href="#contributing">Contributing</a></li>
+                    <li><a href="#contact">Contact & Support</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-        <div class="problem-detail">
-            <div class="problem-header-detail">
-                <span class="problem-code-detail" id="detailCode">Loading...</span>
-                <h1 class="problem-title-detail" id="detailTitle">Loading...</h1>
-                <span class="problem-rating-detail" id="detailRating">---</span>
-            </div>
+        <main class="docs-content">
+            <header class="docs-header">
+                <h1>Documentation</h1>
+                <p class="docs-subtitle">Complete guide to using and customizing this Codeforces Solutions website</p>
+            </header>
 
-            <div class="hint-section">
-                <div class="section-label">💡 Hint</div>
-                <p id="detailHint">Loading...</p>
-            </div>
+            <section id="introduction" class="doc-section">
+                <h2>Introduction</h2>
+                <p>Welcome to the Sdmist Codeforces Solutions documentation. This website is designed to showcase competitive programming solutions in a beautiful, user-friendly interface with support for multiple programming languages, mathematical notation, and custom styling.</p>
+                <p>This platform is built with modern web technologies and is completely free to use, modify, and distribute. Whether you're a competitive programmer looking to share your solutions or someone learning from others' approaches, this documentation will help you get the most out of the platform.</p>
+            </section>
 
-            <div class="code-section">
-                <div class="section-header">
-                    <div class="language-selector">
-                        <span class="section-label">📝 Solution Code</span>
-                        <select id="languageSelect">
-                            <option value="">Loading...</option>
-                        </select>
-                    </div>
-                    <button id="copyBtn" class="copy-btn">Copy Code</button>
-                </div>
-                <div class="code-wrapper">
-                    <pre><code id="detailSolution">Loading...</code></pre>
-                </div>
-            </div>
+            <section id="getting-started" class="doc-section">
+                <h2>Getting Started</h2>
+                <p>To get started with this website, you'll need:</p>
+                <ul>
+                    <li>A GitHub account to host your repository</li>
+                    <li>Basic knowledge of JSON for adding problem data</li>
+                    <li>Your solution code files in supported languages</li>
+                    <li>(Optional) Custom images for personalization</li>
+                </ul>
+                <p>The website uses GitHub Pages for free hosting, making it accessible to anyone without any server costs.</p>
+            </section>
 
-            <div class="complexity-section">
-                <div class="section-label">⚡ Complexity Analysis</div>
-                <div class="complexity-grid">
-                    <div class="complexity-item">
-                        <div class="complexity-label">Time Complexity</div>
-                        <div class="complexity-value" id="timeComplexity">Loading...</div>
-                    </div>
-                    <div class="complexity-item">
-                        <div class="complexity-label">Space Complexity</div>
-                        <div class="complexity-value" id="spaceComplexity">Loading...</div>
-                    </div>
-                </div>
-            </div>
+            <section id="how-to-use" class="doc-section">
+                <h2>How to Use</h2>
+                <h3>Browsing Solutions</h3>
+                <p>The homepage displays all available problems in a clean table format. You can:</p>
+                <ul>
+                    <li><strong>Search</strong> for problems by code or name using the search box</li>
+                    <li><strong>Filter</strong> problems by rating range (e.g., 800-1200)</li>
+                    <li><strong>Navigate</strong> through pages if you have more than 100 problems</li>
+                    <li><strong>Click "Show Code"</strong> to view the full solution with explanation</li>
+                </ul>
+                
+                <h3>Problem Pages</h3>
+                <p>Each problem page includes:</p>
+                <ul>
+                    <li>Problem code and name</li>
+                    <li>Difficulty rating</li>
+                    <li>A helpful hint to guide your thinking</li>
+                    <li>Complete solution code with syntax highlighting</li>
+                    <li>Language selector (if multiple solutions available)</li>
+                    <li>Time and space complexity analysis</li>
+                    <li>Detailed explanation of the approach</li>
+                    <li>Navigation to previous/next problems</li>
+                </ul>
+            </section>
 
-            <div class="explanation-section">
-                <div class="section-label">💬 Explanation</div>
-                <div id="detailExplanation">Loading...</div>
-            </div>
-        </div>
+            <section id="adding-solutions" class="doc-section">
+                <h2>Adding Your Solutions</h2>
+                <p>Adding a new solution is straightforward and requires only two steps:</p>
+                
+                <h3>Step 1: Add Your Solution File</h3>
+                <p>Place your solution file in the <code>solutions/</code> directory. Supported file extensions:</p>
+                <ul>
+                    <li>Python: <code>.py</code></li>
+                    <li>C: <code>.c</code></li>
+                    <li>C++: <code>.cpp</code></li>
+                    <li>Java: <code>.java</code></li>
+                    <li>Kotlin: <code>.kt</code></li>
+                    <li>Rust: <code>.rs</code></li>
+                    <li>Go: <code>.go</code></li>
+                    <li>Iylira: <code>.iyr</code></li>
+                </ul>
 
-        <div class="problem-footer-image-container">
-            <img src="images/footer-problem.png" alt="" class="problem-footer-image" onerror="this.style.display='none'">
-        </div>
+                <h3>Step 2: Update problems.json</h3>
+                <p>Add an entry to <code>problems.json</code> with the following structure:</p>
+                <pre><code>{
+  "code": "1A",
+  "name": "Theatre Square",
+  "rating": 1000,
+  "hint": "Think about ceiling division.",
+  "solutions": {
+    "python": "solutions/theatre_square.py",
+    "cpp": "solutions/theatre_square.cpp"
+  },
+  "explanation": "We calculate the number of flagstones needed...",
+  "timeComplexity": "O(1)",
+  "spaceComplexity": "O(1)"
+}</code></pre>
+                <p><strong>Important:</strong> Remember to add a comma after the previous entry in the JSON array!</p>
+            </section>
+
+            <section id="multi-language" class="doc-section">
+                <h2>Multi-Language Support</h2>
+                <p>The website automatically detects which programming languages you've provided solutions in. Simply add the language to the <code>solutions</code> object in your JSON entry.</p>
+                <p>For example, if you have solutions in both Python and C++:</p>
+                <pre><code>"solutions": {
+  "python": "solutions/problem.py",
+  "cpp": "solutions/problem.cpp"
+}</code></pre>
+                <p>The language selector will automatically appear on the problem page, allowing visitors to switch between implementations.</p>
+            </section>
+
+            <section id="latex-math" class="doc-section">
+                <h2>Using LaTeX Math</h2>
+                <p>You can include mathematical notation in both hints and explanations using LaTeX syntax.</p>
+                
+                <h3>Inline Math</h3>
+                <p>Use single dollar signs for inline formulas:</p>
+                <pre><code>The time complexity is $O(n \\log n)$.</code></pre>
+                
+                <h3>Display Math</h3>
+                <p>Use double dollar signs for centered, display-style formulas:</p>
+                <pre><code>$$\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}$$</code></pre>
+                
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>In JSON files, escape backslashes: use <code>\\</code> instead of <code>\</code></li>
+                    <li>Common symbols: <code>\\leq</code>, <code>\\geq</code>, <code>\\neq</code>, <code>\\infty</code></li>
+                    <li>Fractions: <code>\\frac{numerator}{denominator}</code></li>
+                    <li>Ceiling/Floor: <code>\\lceil x \\rceil</code>, <code>\\lfloor x \\rfloor</code></li>
+                </ul>
+            </section>
+
+            <section id="customization" class="doc-section">
+                <h2>Customization</h2>
+                
+                <h3>Adding Custom Images</h3>
+                <p>Personalize your website with custom images:</p>
+                <ul>
+                    <li><strong>Header Doodle:</strong> <code>images/header-doodle.png</code> (280×280px recommended)</li>
+                    <li><strong>Homepage Footer:</strong> <code>images/footer-home.png</code> (500×200px landscape)</li>
+                    <li><strong>Problem Page Footer:</strong> <code>images/footer-problem.png</code> (450×180px landscape)</li>
+                </ul>
+                <p>Supported formats: PNG, JPEG, WebP, GIF</p>
+
+                <h3>Styling</h3>
+                <p>The website uses CSS custom properties (variables) for easy color customization. Edit <code>style.css</code> to change:</p>
+                <ul>
+                    <li>Background colors</li>
+                    <li>Accent colors</li>
+                    <li>Font choices</li>
+                    <li>Animation speeds</li>
+                </ul>
+            </section>
+
+            <section id="license" class="doc-section">
+                <h2>License & Terms</h2>
+                <p>This website template and all associated code is provided free of charge under the following terms:</p>
+                <ul>
+                    <li>You are free to use this template for personal or commercial projects</li>
+                    <li>You may modify and customize the code as needed</li>
+                    <li>You may distribute modified or unmodified versions</li>
+                    <li>Attribution is appreciated but not required</li>
+                </ul>
+                <p><strong>Solution Code:</strong> All solution codes available on this website are completely free to use and modify for educational purposes. They are provided as-is without any warranty.</p>
+                <p><strong>Third-Party Libraries:</strong> This project uses several open-source libraries:</p>
+                <ul>
+                    <li>Highlight.js for syntax highlighting</li>
+                    <li>MathJax for LaTeX rendering</li>
+                    <li>Google Fonts for typography</li>
+                </ul>
+            </section>
+
+            <section id="contributing" class="doc-section">
+                <h2>Contributing</h2>
+                <p>We welcome contributions from the community! Here's how you can help:</p>
+                
+                <h3>Adding Solutions</h3>
+                <p>If you'd like to contribute your own solutions:</p>
+                <ol>
+                    <li>Fork the repository</li>
+                    <li>Add your solution files and update <code>problems.json</code></li>
+                    <li>Submit a pull request with a clear description</li>
+                </ol>
+
+                <h3>Reporting Issues</h3>
+                <p>Found a bug or have a suggestion? Please open an issue on the GitHub repository with:</p>
+                <ul>
+                    <li>A clear description of the problem or suggestion</li>
+                    <li>Steps to reproduce (for bugs)</li>
+                    <li>Screenshots if applicable</li>
+                </ul>
+
+                <h3>Code Improvements</h3>
+                <p>Code contributions are welcome! Please ensure your code:</p>
+                <ul>
+                    <li>Follows the existing style and structure</li>
+                    <li>Is well-commented and documented</li>
+                    <li>Has been tested across different browsers</li>
+                </ul>
+            </section>
+
+            <section id="contact" class="doc-section">
+                <h2>Contact & Support</h2>
+                <p>For questions, suggestions, or collaboration opportunities, you can reach out through:</p>
+                <ul>
+                    <li><strong>GitHub:</strong> Open an issue or discussion on the repository</li>
+                    <li><strong>Website:</strong> <a href="https://siddashalways.blogspot.com" target="_blank" rel="noopener">siddashalways.blogspot.com</a></li>
+                </ul>
+                <p>We aim to respond to all inquiries within 48 hours. For urgent matters, please mark your message accordingly.</p>
+                
+                <h3>Acknowledgments</h3>
+                <p>Special thanks to the competitive programming community and all contributors who have helped make this platform better.</p>
+            </section>
+        </main>
     </div>
 
     <footer class="site-footer">
@@ -99,14 +244,6 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/kotlin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/rust.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
-    <script src="problem.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
