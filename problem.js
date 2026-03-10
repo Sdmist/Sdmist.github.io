@@ -243,7 +243,28 @@ function loadCode(language) {
                 const langClass = LANGUAGE_CONFIG[language].hljs;
                 codeElement.className = 'language-' + langClass;
                 codeElement.removeAttribute('data-highlighted');
-                hljs.highlightElement(codeElement);
+                
+                // Ensure hljs is loaded before highlighting
+                if (typeof hljs !== 'undefined' && hljs.highlightElement) {
+                    try {
+                        hljs.highlightElement(codeElement);
+                    } catch (e) {
+                        console.error('Highlighting error:', e);
+                        // Fallback: just show the code without highlighting
+                    }
+                } else {
+                    console.warn('highlight.js not loaded yet, waiting...');
+                    // Wait a bit and try again
+                    setTimeout(function() {
+                        if (typeof hljs !== 'undefined' && hljs.highlightElement) {
+                            try {
+                                hljs.highlightElement(codeElement);
+                            } catch (e) {
+                                console.error('Highlighting error on retry:', e);
+                            }
+                        }
+                    }, 500);
+                }
             }
         })
         .catch(function(error) {
