@@ -113,10 +113,6 @@ header {
     border: 2px dashed var(--border-glow);
 }
 
-.header-doodle[src="images/header-doodle.png"] {
-    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150"><rect width="150" height="150" fill="%23a78bfa" opacity="0.1" rx="10"/><text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="%23a78bfa" font-size="14" font-family="sans-serif">Image Here</text></svg>');
-}
-
 @keyframes gentleBounce {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     25% { transform: translateY(-8px) rotate(2deg); }
