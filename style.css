@@ -568,7 +568,7 @@ tbody td:first-child {
 
 .footer-image {
     max-width: 400px;
-    max-height: 300px;
+    max-height: 200px;
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -926,14 +926,19 @@ tbody td:first-child {
         min-width: 0;
     }
 
-    /* Mobile table: stack vertically */
+    /* Mobile table: sleek list design */
     .table-wrapper {
         overflow-x: visible;
     }
 
+    .table-container {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
     table {
         display: block;
-        overflow-x: visible;
     }
 
     thead {
@@ -945,43 +950,97 @@ tbody td:first-child {
     }
 
     tbody tr {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1.5rem;
-        border: 2px solid var(--border);
+        display: block;
+        margin-bottom: 1rem;
+        border: 2px solid var(--border-glow);
         border-radius: 16px;
-        padding: 1.5rem;
+        padding: 1.25rem;
         background: var(--bg-card);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    tbody tr:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(167, 139, 250, 0.2);
     }
 
     tbody td {
         display: block;
-        padding: 0.5rem 0;
+        padding: 0;
         border: none;
     }
 
+    /* Problem header row: code and rating */
     tbody td:first-child {
-        font-size: 0.85rem;
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 700;
         color: var(--accent-primary);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
+        padding: 0.375rem 0.75rem;
+        background: rgba(167, 139, 250, 0.1);
+        border-radius: 8px;
+    }
+
+    /* Problem name */
+    tbody td:nth-child(2) {
+        margin-bottom: 0.75rem;
     }
 
     .problem-name-cell {
-        margin-bottom: 1rem;
+        margin: 0;
     }
 
     .problem-name {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    /* Rating badge */
+    tbody td:nth-child(3) {
+        display: inline-block;
+        margin-left: 0.5rem;
     }
 
     .problem-rating-cell {
-        margin-bottom: 1rem;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.375rem 0.75rem;
+        background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(240, 171, 252, 0.15));
+        border: 1px solid var(--accent-primary);
+        border-radius: 8px;
+        font-size: 0.85rem;
+    }
+
+    /* Show Code Button */
+    tbody td:nth-child(4) {
+        margin-top: 1rem;
     }
 
     .show-code-btn {
-        padding: 0.875rem 1.5rem;
+        padding: 0.875rem;
         font-size: 1rem;
+        font-weight: 700;
         width: 100%;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .show-code-btn::after {
+        content: '→';
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .show-code-btn:active {
+        transform: scale(0.98);
     }
 
     .pagination {
@@ -1062,8 +1121,26 @@ tbody td:first-child {
         font-size: 0.95rem;
     }
 
-    table {
-        min-width: 600px;
+    .header-doodle {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    tbody tr {
+        padding: 1rem;
+    }
+
+    tbody td:first-child {
+        font-size: 0.85rem;
+    }
+
+    .problem-name {
+        font-size: 1.1rem;
+    }
+
+    .show-code-btn {
+        padding: 0.75rem;
+        font-size: 0.95rem;
     }
 
     .footer-image {
