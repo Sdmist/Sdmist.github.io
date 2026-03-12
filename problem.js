@@ -113,9 +113,20 @@ let currentIndex = 0;
 let currentProblem = null;
 let availableLanguages = [];
 let currentLanguage = 'python';
+let hljsReady = false;
 
+// Wait for hljs to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    loadProblems();
+    // Check if hljs is ready
+    function checkHljsReady() {
+        if (typeof hljs !== 'undefined' && hljs.highlightElement) {
+            hljsReady = true;
+            loadProblems();
+        } else {
+            setTimeout(checkHljsReady, 100);
+        }
+    }
+    checkHljsReady();
 });
 
 function loadProblems() {
@@ -160,11 +171,18 @@ function loadProblemDetail() {
     const explanationDiv = document.getElementById('detailExplanation');
     explanationDiv.innerHTML = '<p>' + currentProblem.explanation + '</p>';
     
-    if (window.MathJax) {
-        MathJax.typesetPromise([hintElement, explanationDiv]).catch(function(err) {
-            console.log('MathJax error:', err);
-        });
+    // Wait for MathJax to be fully loaded before typesetting
+    function typesetMath() {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            MathJax.typesetPromise([hintElement, explanationDiv]).catch(function(err) {
+                console.log('MathJax error:', err);
+            });
+        } else {
+            // MathJax not ready yet, wait and try again
+            setTimeout(typesetMath, 100);
+        }
     }
+    typesetMath();
 
     detectAvailableLanguages();
     updateNavButtons();
@@ -244,26 +262,15 @@ function loadCode(language) {
                 codeElement.className = 'language-' + langClass;
                 codeElement.removeAttribute('data-highlighted');
                 
-                // Ensure hljs is loaded before highlighting
-                if (typeof hljs !== 'undefined' && hljs.highlightElement) {
+                // hljs is guaranteed to be ready now
+                if (hljsReady) {
                     try {
                         hljs.highlightElement(codeElement);
                     } catch (e) {
                         console.error('Highlighting error:', e);
-                        // Fallback: just show the code without highlighting
                     }
                 } else {
-                    console.warn('highlight.js not loaded yet, waiting...');
-                    // Wait a bit and try again
-                    setTimeout(function() {
-                        if (typeof hljs !== 'undefined' && hljs.highlightElement) {
-                            try {
-                                hljs.highlightElement(codeElement);
-                            } catch (e) {
-                                console.error('Highlighting error on retry:', e);
-                            }
-                        }
-                    }, 500);
+                    console.error('hljs not ready - this should not happen');
                 }
             }
         })
