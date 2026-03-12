@@ -926,7 +926,7 @@ tbody td:first-child {
         min-width: 0;
     }
 
-    /* Mobile table: sleek list design */
+    /* Mobile: flat list design */
     .table-wrapper {
         overflow-x: visible;
     }
@@ -950,19 +950,25 @@ tbody td:first-child {
     }
 
     tbody tr {
-        display: block;
-        margin-bottom: 1rem;
-        border: 2px solid var(--border-glow);
-        border-radius: 16px;
-        padding: 1.25rem;
-        background: var(--bg-card);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem 0;
+        margin-bottom: 0;
+        border: none;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        transition: background 0.2s ease;
     }
 
     tbody tr:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(167, 139, 250, 0.2);
+        background: rgba(167, 139, 250, 0.03);
+        transform: none;
+    }
+
+    tbody tr:last-child {
+        border-bottom: none;
     }
 
     tbody td {
@@ -971,20 +977,32 @@ tbody td:first-child {
         border: none;
     }
 
-    /* Problem header row: code and rating */
-    tbody td:first-child {
+    /* First row: code and rating */
+    tbody td:first-child,
+    tbody td:nth-child(3) {
         display: inline-block;
+    }
+
+    tbody td:first-child {
         font-size: 0.9rem;
         font-weight: 700;
         color: var(--accent-primary);
-        margin-bottom: 0.75rem;
-        padding: 0.375rem 0.75rem;
-        background: rgba(167, 139, 250, 0.1);
-        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    tbody td:nth-child(3) {
+        float: right;
+    }
+
+    .problem-rating-cell {
+        font-size: 0.9rem;
+        font-weight: 700;
     }
 
     /* Problem name */
     tbody td:nth-child(2) {
+        clear: both;
         margin-bottom: 0.75rem;
     }
 
@@ -993,54 +1011,36 @@ tbody td:first-child {
     }
 
     .problem-name {
-        font-size: 1.2rem;
-        font-weight: 700;
-        line-height: 1.4;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text-primary);
     }
 
-    /* Rating badge */
-    tbody td:nth-child(3) {
-        display: inline-block;
-        margin-left: 0.5rem;
-    }
-
-    .problem-rating-cell {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.375rem 0.75rem;
-        background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(240, 171, 252, 0.15));
-        border: 1px solid var(--accent-primary);
-        border-radius: 8px;
-        font-size: 0.85rem;
-    }
-
-    /* Show Code Button */
+    /* Show Code Button - flat style */
     tbody td:nth-child(4) {
-        margin-top: 1rem;
+        margin-top: 0;
     }
 
     .show-code-btn {
-        padding: 0.875rem;
-        font-size: 1rem;
-        font-weight: 700;
-        width: 100%;
-        border-radius: 12px;
-        display: flex;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        width: auto;
+        display: inline-flex;
         align-items: center;
-        justify-content: center;
         gap: 0.5rem;
-        position: relative;
-        overflow: hidden;
+        border-radius: 20px;
+        background: linear-gradient(135deg, var(--accent-primary), var(--pink));
+        box-shadow: 0 2px 8px rgba(167, 139, 250, 0.3);
     }
 
     .show-code-btn::after {
         content: '→';
-        font-size: 1.2rem;
-        transition: transform 0.3s ease;
+        font-size: 1.1rem;
     }
 
     .show-code-btn:active {
-        transform: scale(0.98);
+        transform: scale(0.97);
     }
 
     .pagination {
@@ -1127,7 +1127,7 @@ tbody td:first-child {
     }
 
     tbody tr {
-        padding: 1rem;
+        padding: 1rem 0;
     }
 
     tbody td:first-child {
@@ -1135,12 +1135,12 @@ tbody td:first-child {
     }
 
     .problem-name {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
 
     .show-code-btn {
-        padding: 0.75rem;
-        font-size: 0.95rem;
+        padding: 0.65rem 1rem;
+        font-size: 0.9rem;
     }
 
     .footer-image {
