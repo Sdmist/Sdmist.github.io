@@ -865,7 +865,7 @@ tbody td:first-child {
 
 .problem-footer-image {
     max-width: 350px;
-    max-height: 3500px;
+    max-height: 350px;
     width: 100%;
     height: auto;
     object-fit: contain;
