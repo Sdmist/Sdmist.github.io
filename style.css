@@ -1004,10 +1004,15 @@ tbody td:first-child {
     tbody td:nth-child(2) {
         clear: both;
         margin-bottom: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
     }
 
     .problem-name-cell {
         margin: 0;
+        flex: 1;
     }
 
     .problem-name {
@@ -1016,27 +1021,29 @@ tbody td:first-child {
         color: var(--text-primary);
     }
 
-    /* Show Code Button - flat style */
+    /* Show Code Button - small, inline right */
     tbody td:nth-child(4) {
         margin-top: 0;
+        flex-shrink: 0;
     }
 
     .show-code-btn {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
         font-weight: 600;
         width: auto;
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
         border-radius: 20px;
         background: linear-gradient(135deg, var(--accent-primary), var(--pink));
         box-shadow: 0 2px 8px rgba(167, 139, 250, 0.3);
+        white-space: nowrap;
     }
 
     .show-code-btn::after {
         content: '→';
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .show-code-btn:active {
