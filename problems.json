@@ -51,7 +51,7 @@
       "c": "solutions/Bit++.c",
       "cpp": "solutions/Bit++.cpp"
     },
-    "explanation": "First we intialize $x$ equal to zero. For each operation, we take input of the string as $s$. See that either of  $X++$ or $++X$ can be given as the input. Same for $X--$ and $--X$. \n \n In one way, we can indeed directly compare the string and make the correponding operaton. However if we observe smartly, we see that the middle elenent of the string %+$ $-$ is enough to define the operation uniiqely. So we can directly use s[$1$] and make the correspoding operation. Finally at the end of the $n$ operations we print the updated value of $x$",
+    "explanation": "First we intialize $x$ equal to zero. For each operation, we take input of the string as $s$. See that either of X++ or ++X can be given as the input. Same for X-- and --X. \n \n In one way, we can indeed directly compare the string and make the correponding operaton. However if we observe smartly, we see that the middle element of the string $+$ or $-$ is enough to define the operation uniiqely. So we can directly use s[$1$] and make the correspoding operation. Finally at the end of the $n$ operations we print the updated value of $x$",
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)"
   }
