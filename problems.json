@@ -68,4 +68,5 @@
     "explanation": "The score of the player at the $k$th place is at $k-1$ index. We run a loop and count the no. of players having score greater than $req_score$. Since the given array is non-increasing (i.e decreasing with may be a few equal elements), if we come across a player scoring less than $req_score$, the player after it can't pass the threshold too, so we can break the loop then and there.\n \n It's under constraints that all $a_{i} \\geq 0 $. Thus problem can only occur iff $req_score = 0$, whence any player having score equal to $0$ won't advance. This is easily managed by a general if $(a[i] > 0)$ condition for all cases."
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)"
+  }
 ]
