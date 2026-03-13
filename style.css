@@ -960,10 +960,8 @@ tbody td:first-child {
     }
 
     tbody tr {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        grid-template-rows: auto auto;
-        gap: 0.5rem 1rem;
+        display: flex;
+        flex-wrap: wrap;
         padding: 1.25rem 0;
         margin-bottom: 0;
         border: none;
@@ -976,7 +974,6 @@ tbody td:first-child {
 
     tbody tr:hover {
         background: rgba(167, 139, 250, 0.03);
-        transform: none;
     }
 
     tbody tr:last-child {
@@ -988,23 +985,22 @@ tbody td:first-child {
         border: none;
     }
 
-    /* Grid layout:
-       [code] [name................] [button]
-       [....] [rating.............] [.....]  */
-
-    /* Code - top left */
+    /* Code - takes 100% width on first row */
     tbody td:first-child {
-        grid-column: 1;
-        grid-row: 1;
+        width: 100%;
         font-size: 0.9rem;
         font-weight: 700;
         color: var(--accent-primary);
+        margin-bottom: 0.6rem;
+        order: 1;
     }
 
-    /* Name - top middle (takes available space) */
+    /* Name - flexible, takes remaining space */
     tbody td:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1;
+        flex: 1;
+        margin-bottom: 0.6rem;
+        order: 2;
+        min-width: 0;
     }
 
     .problem-name-cell {
@@ -1018,24 +1014,11 @@ tbody td:first-child {
         line-height: 1.3;
     }
 
-    /* Rating - bottom middle (under name) */
-    tbody td:nth-child(3) {
-        grid-column: 2;
-        grid-row: 2;
-        justify-self: start;
-    }
-
-    .problem-rating-cell {
-        font-size: 0.85rem;
-        font-weight: 700;
-    }
-
-    /* Button - top right (same row as name) */
+    /* Button - on same row as name, right side */
     tbody td:nth-child(4) {
-        grid-column: 3;
-        grid-row: 1;
-        justify-self: end;
-        align-self: center;
+        order: 3;
+        margin-bottom: 0.6rem;
+        margin-left: 0.75rem;
     }
 
     .show-code-btn {
@@ -1059,6 +1042,18 @@ tbody td:first-child {
 
     .show-code-btn:active {
         transform: scale(0.97);
+    }
+
+    /* Rating - full width on third row */
+    tbody td:nth-child(3) {
+        width: 100%;
+        order: 4;
+    }
+
+    .problem-rating-cell {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--accent-primary);
     }
 
     .pagination {
