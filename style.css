@@ -938,7 +938,7 @@ tbody td:first-child {
 
     /* Mobile: flat list design */
     .table-wrapper {
-        overflow-x: visible;
+        overflow-x: hidden;
     }
 
     .table-container {
