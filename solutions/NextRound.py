@@ -10,7 +10,7 @@ cnt = 0
 for x in a:
     if x >= req_score and x > 0: cnt += 1
     else: break
-print(count)
+print(cnt)
 
 #=================================================
 #Method-2: Using sum() with generator expression
@@ -34,10 +34,9 @@ print(sum(1 for x in a if x >= req_score and x > 0))
 #if req_score != 0, k players pass by default
 def solve(n, k, a):
     if a[k-1] != 0:
-        return(k)
+        return(k + a[k:].count(a[k-1]))
     else:
-        return(a.count(0))
-
+        return(k - a[:k].count(0))
 n, k = map(int, input().split())
 a = list(map(int, input().split()))
 
