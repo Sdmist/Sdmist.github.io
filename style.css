@@ -1024,7 +1024,7 @@ tbody td:first-child {
 
     /* Row 3: Button (right-aligned) */
     tbody td:nth-child(4) {
-        text-align: right;
+        text-align: left;
         display: block !important;
     }
 
