@@ -80,7 +80,7 @@
       "cpp": "solutions/Dominopiling.cpp"
     },
     "explanation": "We can always pile up the whole board if the total area $m * n$ is even. But if the total area is odd, we'll be left with one square unfilled. To implement this we use floor division.",
-    "timeComplexity": "O(n)",
-    "spaceComplexity": "O(n)"
+    "timeComplexity": "O(1)",
+    "spaceComplexity": "O(1)"
   }
 ]
