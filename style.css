@@ -567,8 +567,8 @@ tbody td:first-child {
 }
 
 .footer-image {
-    max-width: 400px;
-    max-height: 200px;
+    max-width: 600px;
+    max-height: 400px;
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -864,8 +864,8 @@ tbody td:first-child {
 }
 
 .problem-footer-image {
-    max-width: 350px;
-    max-height: 180px;
+    max-width: 500px;
+    max-height: 300px;
     width: 100%;
     height: auto;
     object-fit: contain;
