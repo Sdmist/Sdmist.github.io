@@ -82,5 +82,19 @@
     "explanation": "We can always pile up the whole board if the total area $m * n$ is even. But if the total area is odd, we'll be left with one square unfilled. To implement this we use floor division.",
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
+  },
+  {
+    "code": "263A",
+    "name": "Beautiful Matrix",
+    "rating": 800,
+    "hint": "Find the row and column of the single $1$",
+    "solutions": {
+      "python": "solutions/BeautifulMatrix.py",
+      "c": "solutions/BeautifulMatrix.c",
+      "cpp": "solutions/BeautifulMatrix.cpp"
+    },
+    "explanation": "The only thing we need to do is to find the position (row, column) of the $1$. We should either use the computer indexes $(0, 1, 2, ...)$ or the mathematical indexes $(1, 2, 3, ...)$. We can use either one, but after choosing we should remain consistent. Let's use mathematical indexes here. \n \n The position of the centre is then (3, 3). If the position of $1$ is (i1, j1) then steps required will be $abs(i1-3) + abs(j1-3)$. That is we add column and row distance from the centre! \n \n In python we can do this by using a list or a map. In C and C++ the position can be stored just while taking the input as soon as $1$ is encountered.",
+    "timeComplexity": "O(1)",
+    "spaceComplexity": "O(1)"
   }
 ]
