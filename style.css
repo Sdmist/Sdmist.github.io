@@ -936,7 +936,7 @@ tbody td:first-child {
         padding: 0.875rem 0.75rem;
     }
 
-    /* Mobile: flat list design */
+    /* Mobile: flat list design - NO FLOATS */
     .table-wrapper {
         overflow-x: visible;
         padding: 0 1rem;
@@ -986,32 +986,57 @@ tbody td:first-child {
         display: block;
         padding: 0;
         border: none;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
-    /* Row 1: Code (left) and Rating (right) */
+    /* Row 1: Code and Rating on same line with flexbox */
     tbody td:first-child {
         display: inline-block;
         font-size: 0.9rem;
         font-weight: 700;
         color: var(--accent-primary);
         margin-bottom: 0.6rem;
+        width: auto !important;
     }
 
     tbody td:nth-child(3) {
         display: inline-block;
-        float: none;
-        margin-left: auto;
-    }
-
-    .problem-rating-cell {
         font-size: 0.85rem;
         font-weight: 700;
         color: var(--accent-primary);
+        margin-bottom: 0.6rem;
+        margin-left: auto;
+        width: auto !important;
+    }
+
+    /* Make row 1 flex with proper width constraints */
+    tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: calc(100vw - 4rem) !important;
+    }
+
+    tbody td:first-child {
+        order: 1;
+    }
+
+    tbody td:nth-child(3) {
+        order: 2;
+        margin-left: auto;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--accent-primary);
+        margin-bottom: 0.6rem;
+        width: auto !important;
+        margin-right: 0.5rem !important;
+        text-align: right;
     }
 
     /* Row 2: Problem name */
     tbody td:nth-child(2) {
-        clear: both;
+        order: 3;
+        width: 100% !important;
         margin-bottom: 0.6rem;
     }
 
@@ -1026,25 +1051,39 @@ tbody td:first-child {
         line-height: 1.3;
     }
 
-    /* Row 3: Button (right-aligned, stays within padding) */
+    .problem-rating-cell {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--accent-primary);
+    }
+
+    /* Row 3: Button (right-aligned with strict width control) */
     tbody td:nth-child(4) {
-        text-align: right;
-        display: block !important;
+        order: 4;
+        width: 100% !important;
+        max-width: calc(100vw - 4rem) !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        overflow: visible !important;
+        position: relative !important;
+        padding-right: 1rem !important;
     }
 
     tbody tr .show-code-btn {
         padding: 0.5rem 0.9rem !important;
         font-size: 0.8rem !important;
         font-weight: 600;
-        display: inline-flex !important;
-        align-items: center;
-        gap: 0.35rem;
+        display: inline-block !important;
         border-radius: 18px;
-        background: linear-gradient(135deg, var(--accent-primary), var(--pink));
+        background: linear-gradient(135deg, var(--accent-primary), var(--pink)) !important;
+        color: white !important;
+        border: none !important;
         box-shadow: 0 2px 8px rgba(167, 139, 250, 0.3);
         white-space: nowrap;
-        visibility: visible !important;
-        opacity: 1 !important;
+        max-width: 100% !important;
+        position: relative !important;
+        right: 0 !important;
+        margin-right: 0.5rem !important;
     }
 
     tbody tr .show-code-btn::after {
