@@ -999,7 +999,8 @@ tbody td:first-child {
 
     tbody td:nth-child(3) {
         display: inline-block;
-        float: right;
+        float: none;
+        margin-left: auto;
     }
 
     .problem-rating-cell {
