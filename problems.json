@@ -8,7 +8,8 @@
       "python": "solutions/watermelon.py",
       "c": "solutions/watermelon.c", 
       "cpp": "solutions/watermelon.cpp",
-      "java": "solutions/watermelon.java"
+      "java": "solutions/watermelon.java",
+      "fortran": "solutions/watermelon.f95"
     },
     "explanation": "Any even weight $w$ except $2$ can be divided as $2$ and $w - 2$. For example: \n  $10 = 8 + 2$ \n $16 = 14 + 2$ \n\nHowever this is not possible for $w = 2$. For $w = 2$ only possible division is $1 + 1$. We cannot do $2 + 0$ since it is mentioned that each one should receive a positive weight.\n\nAny odd weight cannot be divided into two even parts as any odd number can't be sum of two even numbers.",
     "timeComplexity": "O(1)",
@@ -23,7 +24,8 @@
       "python": "solutions/WayTooLongWords.py",
       "c": "solutions/WayTooLongWords.c",
       "cpp": "solutions/WayTooLongWords.cpp",
-      "java": "solutions/WayTooLongWords.java"
+      "java": "solutions/WayTooLongWords.java",
+      "fortran": "solutions/WayTooLongWords.f95"
     },
     "explanation": "We check if the length of the string is strictly greater than $10$.\n\nIf it is, then we access the first and last elements only and the number of letters between them is $len(string) - 2$.\n\nWe print as required.",
     "timeComplexity": "O(n)",
