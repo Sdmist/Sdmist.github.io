@@ -102,6 +102,7 @@ const LANGUAGE_CONFIG = {
     c: { name: 'C', ext: '.c', hljs: 'c' },
     cpp: { name: 'C++', ext: '.cpp', hljs: 'cpp' },
     java: { name: 'Java', ext: '.java', hljs: 'java' },
+    fortran: { name: 'Fortran', ext: '.f90', hljs: 'fortran' },
     kotlin: { name: 'Kotlin', ext: '.kt', hljs: 'kotlin' },
     rust: { name: 'Rust', ext: '.rs', hljs: 'rust' },
     go: { name: 'Go', ext: '.go', hljs: 'go' },
