@@ -7,7 +7,8 @@
     "solutions": {
       "python": "solutions/watermelon.py",
       "c": "solutions/watermelon.c", 
-      "cpp": "solutions/watermelon.cpp" 
+      "cpp": "solutions/watermelon.cpp",
+      "java": "solutions/watermelon.java"
     },
     "explanation": "Any even weight $w$ except $2$ can be divided as $2$ and $w - 2$. For example: \n  $10 = 8 + 2$ \n $16 = 14 + 2$ \n\nHowever this is not possible for $w = 2$. For $w = 2$ only possible division is $1 + 1$. We cannot do $2 + 0$ since it is mentioned that each one should receive a positive weight.\n\nAny odd weight cannot be divided into two even parts as any odd number can't be sum of two even numbers.",
     "timeComplexity": "O(1)",
@@ -21,7 +22,8 @@
     "solutions": {
       "python": "solutions/WayTooLongWords.py",
       "c": "solutions/WayTooLongWords.c",
-      "cpp": "solutions/WayTooLongWords.cpp"
+      "cpp": "solutions/WayTooLongWords.cpp",
+      "java": "solutions/WayTooLongWords.java"
     },
     "explanation": "We check if the length of the string is strictly greater than $10$.\n\nIf it is, then we access the first and last elements only and the number of letters between them is $len(string) - 2$.\n\nWe print as required.",
     "timeComplexity": "O(n)",
@@ -35,7 +37,8 @@
     "solutions": {
       "python": "solutions/Team.py",
       "c": "solutions/Team.c",
-      "cpp": "solutions/Team.cpp"
+      "cpp": "solutions/Team.cpp",
+      "java": "solutions/Team.java"
     },
     "explanation": "The objective is to count the number of $1$s in each query. Each query can either be converted into a list or a string or simply a map. In Python, we can just use a map, since we need to access each element only once. \n\n In C and C++, we can count just as we take each input using cin.  \n\n In each query, when the count of $1$s is more than one, we increase the value of $ans$ by $1$. At the end we print the $ans$.",
     "timeComplexity": "O(n)",
