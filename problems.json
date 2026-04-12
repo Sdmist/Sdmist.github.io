@@ -55,7 +55,9 @@
     "solutions": {
       "python": "solutions/Bit++.py",
       "c": "solutions/Bit++.c",
-      "cpp": "solutions/Bit++.cpp"
+      "cpp": "solutions/Bit++.cpp",
+      "java": "solutions/Bit++.java", 
+      "fortran": "solutions/Bit++.f95"
     },
     "explanation": "First we intialize $x$ equal to zero. For each operation, we take input of the string as $s$. See that either of X++ or ++X can be given as the input. Same for X-- and --X. \n \n We can directly compare the string and make the correponding operaton. However if we observe smartly, we see that the middle element of the string $+$ or $-$ is enough to define the operation uniquely. So we can directly use s[$1$] and make the correspoding operation. Finally at the end of the $n$ operations we print the updated value of $x$.",
     "timeComplexity": "O(n)",
@@ -69,7 +71,9 @@
     "solutions": {
       "python": "solutions/NextRound.py",
       "c": "solutions/NextRound.c",
-      "cpp": "solutions/NextRound.cpp"
+      "cpp": "solutions/NextRound.cpp",
+      "java": "solutions/NextRound.java", 
+      "fortran": "solutions/NextRound.f95"
     },
     "explanation": "The score of the player at the $k$th place is at $k-1$ index. We run a loop and count the no. of players having score greater than or equal to the $\\text{req_score}$. Since the given array is non-increasing (i.e decreasing with may be a few equal elements), if we come across a player scoring less than $\\text{req_score}$, the player after it can't pass the threshold too, so we can break the loop then and there.\n \n Mark that there may be some players after the $k$th place that have score equal to the $\\text{req_score}$. \n \n It's under constraints that all $a_{i} \\geq 0 $. Thus problem can only occur iff $\\text{req_score} = 0$, whence any player having score equal to $0$ won't advance. This is easily managed by a general if $(a[i] > 0)$ condition for all cases.",
     "timeComplexity": "O(n)",
@@ -83,7 +87,9 @@
     "solutions": {
       "python": "solutions/Dominopiling.py",
       "c": "solutions/Dominopiling.c",
-      "cpp": "solutions/Dominopiling.cpp"
+      "cpp": "solutions/Dominopiling.cpp",
+      "java": "solutions/Dominopiling.java", 
+      "fortran": "solutions/Dominopiling.f95"
     },
     "explanation": "We can always pile up the whole board if the total area $m * n$ is even. But if the total area is odd, we'll be left with one square unfilled. To implement this we use floor division.",
     "timeComplexity": "O(1)",
@@ -97,7 +103,9 @@
     "solutions": {
       "python": "solutions/BeautifulMatrix.py",
       "c": "solutions/BeautifulMatrix.c",
-      "cpp": "solutions/BeautifulMatrix.cpp"
+      "cpp": "solutions/BeautifulMatrix.cpp",
+      "java": "solutions/BeautifulMatrix.java", 
+      "fortran": "solutions/BeautifulMatrix.f95"
     },
     "explanation": "The only thing we need to do is to find the position (row, column) of the $1$. We should either use the computer indexes $(0, 1, 2, ...)$ or the mathematical indexes $(1, 2, 3, ...)$. We can use either one, but after choosing we should remain consistent. Let's use mathematical indexes here. \n \n The position of the centre is then $(3, 3)$. If the position of $1$ is $(i1, j1)$ then steps required will be $abs(i1-3) + abs(j1-3)$. That is we add column and row distance from the centre! \n \n In python we can do this by using a list or a map. In C and C++ the position can be stored just while taking the input as soon as $1$ is encountered.",
     "timeComplexity": "O(1)",
