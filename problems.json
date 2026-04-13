@@ -91,7 +91,7 @@
       "java": "solutions/Dominopiling.java", 
       "fortran": "solutions/Dominopiling.f95"
     },
-    "explanation": "We can always pile up the whole board if the total area $m * n$ is even. But if the total area is odd, we'll be left with at least one square unfilled. See a proof <a href = 'https://siddashalways.blogspot.com/p/cf-proves.html' target = '_black'>here</a> To implement this we use floor division.",
+    "explanation": "We can always pile up the whole board if the total area $m * n$ is even. But if the total area is odd, we'll be left with at least one square unfilled. See a proof <a href = 'https://siddashalways.blogspot.com/p/cf-proves.html' target = '_black' style = 'color : purple;'>here</a> To implement this we use floor division.",
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
   },
