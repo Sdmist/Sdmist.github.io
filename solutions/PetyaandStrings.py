@@ -19,23 +19,23 @@ else: print(0)
 #ord() gives the Unicode integer of characters.
 #Capital and small aphabets have a integer diff of 32.
 
+def give_small_ord(ch):
+  if 'A' <= ch <= 'Z':
+    return(ord(ch) + 32)
+  return(ord(ch))
+  
 s1 = input()
 s2 = input()
-
-ans = 0 
+ans = 0
 for x, y in zip(s1, s2):
-  diff = ord(s1) - ord(s2)
-  if diff == 0 or diff = 32:
-    #same alphabets(capital or small)
-    continue
-  elif diff < 0:
-    ans = -1; break;
-  else:
-    ans = 1; break; 
-    
+  i = give_small_ord(x)
+  j = give_small_ord(y)
+  
+  if i < j: ans = -1
+  else: ans = 1
+
 print(ans)
 
-  
 #=========================================
 #Method-3: Using raw instinct
 #=========================================
