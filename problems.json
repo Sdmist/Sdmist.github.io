@@ -110,5 +110,21 @@
     "explanation": "The only thing we need to do is to find the position (row, column) of the $1$. We should either use the computer indexes $(0, 1, 2, ...)$ or the mathematical indexes $(1, 2, 3, ...)$. We can use either one, but after choosing we should remain consistent. Let's use mathematical indexes here. \n \n The position of the centre is then $(3, 3)$. If the position of $1$ is $(i1, j1)$ then steps required will be $abs(i1-3) + abs(j1-3)$. That is we add column and row distance from the centre! \n \n In python we can do this by using a list or a map. In C and C++ the position can be stored just while taking the input as soon as $1$ is encountered.",
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
+  },
+  {
+    "code": "112A",
+    "name": "Petya and Strings",
+    "rating": 800,
+    "hint": "We need to relate lowercase letters and uppercase letters.",
+    "solutions": {
+      "python": "solutions/PetyaandStrings.py",
+      "c": "solutions/PetyaandStrings.c",
+      "cpp": "solutions/PetyaandStrings.cpp",
+      "java": "solutions/PetyaandStrings.java", 
+      "fortran": "solutions/PetyaandStrings.f95"
+    },
+    "explanation": "For comparison, we need to associate some value to each alphabet character and this value should be relatable for both lowercase and uppercase alphabets. The one obvious value is the index or 'position number' of the characters in the alphabet. \n \n Now, how do we make this 'position number' equivalent for both uppercase and lowercase letters? One way is to convert everything to lower-case and then compare. This can be achieved easily using built-in function like .lower() or .tolower() etc. Another method is to use ASCII or Unicode values directly. In these, the values of lower-case characters and their corresponding upper-case characters differ by a value of $32$. \n \n Alternatively, if rawness is dominating, we can create our own alphabet strings and use indexes for comparison as is shown in the Method-3 of the Python solution.", 
+    "timeComplexity": "O(n)",
+    "spaceComplexity": "O(1)"
   }
 ]
