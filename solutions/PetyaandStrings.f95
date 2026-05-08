@@ -1,3 +1,5 @@
+//This code is curretly wrong. It will be corrected soon.
+
 program PetyaandStrings
   implicit none 
   character (len = 100) :: s1, s2
