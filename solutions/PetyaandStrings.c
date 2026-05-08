@@ -13,8 +13,13 @@ int main() {
         char c1 = tolower(s1[i]);
         char c2 = tolower(s2[i]);
 
-        if (c1 < c2) ans = -1;
-        else if (c1 > c2) ans = 1;
+        if (c1 < c2) {
+            ans = -1;
+            break;
+        else if (c1 > c2) {
+            ans = 1;
+            break;
+        }
     }
     printf("%d", ans);
     return(0);
