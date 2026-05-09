@@ -139,8 +139,8 @@
       "java": "solutions/BoyOrGirl.java", 
       "fortran": "solutions/BoyOrGirl.f95"
     },
-    "explanation": "We need to count the number of distinct characters in the string. \n\n Method-1: Use set to remove duplicates. \n Method-2: Maintain a Boolean array of length 26. For example if 'a' is present then the index $0$ is True and so on. \n Method-3: Use Bit Masks. \n \n We implement these different methods in different languages for fun.", 
-    "timeComplexity": "O(n)",
+    "explanation": "We need to count the number of distinct characters in the string. \n\n Method-1: Use set to remove duplicates. \n Method-2: Maintain a Boolean array of length 26. For example if 'a' is present then the index $0$ is True and so on. \n Method-3: Use Bit Masks. \n \n As length of string is at most $100$, the time-complexity is $O(1)$ for all the methods.", 
+    "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
   }
 ]
