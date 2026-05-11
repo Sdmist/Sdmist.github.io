@@ -151,7 +151,7 @@
     "solutions": {
       "python": "solutions/HelpfulMaths.py",
       "c": "solutions/HelpfulMaths.c",
-      "cpp": "solutions/HelpfulMathscpp",
+      "cpp": "solutions/HelpfulMaths.cpp",
       "java": "solutions/HelpfulMaths.java", 
       "fortran": "solutions/HelpfulMaths.f95"
     },
