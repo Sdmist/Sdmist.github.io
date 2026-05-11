@@ -142,5 +142,21 @@
     "explanation": "We need to count the number of distinct characters in the string. \n\n Method-1: Use set to remove duplicates. \n Method-2: Maintain a Boolean array of length 26. For example if 'a' is present then the index $0$ is True and so on. \n Method-3: Use Bit Masks. \n \n As length of string is at most $100$, the time-complexity is $O(1)$ for all the methods.", 
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
+  },
+  {
+    "code": "339A",
+    "name": "Helpful Maths",
+    "rating": 800,
+    "hint": "We need to sort.",
+    "solutions": {
+      "python": "solutions/HelpfulMaths.py",
+      "c": "solutions/HelpfulMaths.c",
+      "cpp": "solutions/HelpfulMathscpp",
+      "java": "solutions/HelpfulMaths.java", 
+      "fortran": "solutions/HelpfulMaths.f95"
+    },
+    "explanation": "To do this, we can extract the integers, sort them and then join them with '+' sign. Alternatively, we may just sort the string. By ASCII vaues if the input string is '1+3+2', then after sorting it will become '+++123'. We can then join just the numbers. \n\n The general time-complexity is $O(log n)$, where but as string length is at most 100, it reduces to a constant time-complexity $O(1)$   ", 
+    "timeComplexity": "O(1)",
+    "spaceComplexity": "O(1)"
   }
 ]
