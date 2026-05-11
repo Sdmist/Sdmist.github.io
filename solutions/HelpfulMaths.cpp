@@ -2,7 +2,6 @@
 using namespace std;
 
 // Integer vector sorting
-
 int main() {
   sync_with_stdio(false);
   cin.tie(nullptr);
@@ -23,7 +22,6 @@ int main() {
 }
 
 //Direct characters sorting
-
 int main() {
   sync_with_stdio(false);
   cin.tie(nullptr);
