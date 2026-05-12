@@ -156,7 +156,7 @@
       "fortran": "solutions/HelpfulMaths.f95"
     },
     "explanation": "To do this, we can extract the integers, sort them and then join them with '+' sign. Alternatively, we may just sort the string. By ASCII vaues if the input string is '1+3+2', then after sorting it will become '+++123'. We can then join just the numbers. \n\n The general time-complexity is $O(log n)$, where but as string length is at most 100, it reduces to a constant time-complexity $O(1)$   ", 
-    "timeComplexity": "O(1)",
+    "timeComplexity": "O(n log(n))",
     "spaceComplexity": "O(1)"
   },
   {
@@ -171,8 +171,8 @@
       "java": "solutions/WordCapitalization.java", 
       "fortran": "solutions/WordCapitalization.f95"
     },
-    "explanation": "The process is obvious. The only thing we need to optimize is time-complexity. We'll avoid reconstructing the string and print the answer directly. This will have a constant time-complexity $O(1)$.", 
-    "timeComplexity": "O(1)",
+    "explanation": "The process is obvious. The catch is even if the code is tiny, the time-complexity is $O(n)$. I can't think of a solution that is less than $O(1)$, can you?", 
+    "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)"
   }
 ]
