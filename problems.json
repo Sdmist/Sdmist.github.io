@@ -171,7 +171,7 @@
       "java": "solutions/WordCapitalization.java", 
       "fortran": "solutions/WordCapitalization.f95"
     },
-    "explanation": "The process is obvious. The catch is even if the code is tiny, the time-complexity is $O(n)$. I can't think of a solution that is less than $O(1)$, can you?", 
+    "explanation": "The process is obvious. The catch is even if the code is tiny, the time-complexity is $O(n)$. I can't think of a solution that is less than $O(n)$, can you?", 
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)"
   }
