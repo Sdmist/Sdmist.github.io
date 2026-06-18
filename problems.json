@@ -174,5 +174,21 @@
     "explanation": "The process is obvious. The catch is even if the code is tiny, the time-complexity is $O(n)$. I can't think of a solution that is less than $O(n)$, can you?", 
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)"
+  },
+  {
+    "code": "791A",
+    "name": "Bear and Big Brother",
+    "rating": 800,
+    "hint": "We can simply iterate till the required conditio.",
+    "solutions": {
+      "python": "solutions/BearandBigBrother.py",
+      "c": "solutions/BearandBigBrother.c",
+      "cpp": "solutions/BearandBigBrother.cpp",
+      "java": "solutions/BearandBigBrother.java", 
+      "fortran": "solutions/BearandBigBrother.f95"
+    },
+    "explanation": "Since the constraints aren't large, we can simulate the situation- updating the value of $a$ and $b$ after each iteration.", 
+    "timeComplexity": "O(b/a)",
+    "spaceComplexity": "O(1)"
   }
 ]
