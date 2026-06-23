@@ -190,5 +190,21 @@
     "explanation": "Since the constraints aren't large, we can simulate the situation- updating the value of $a$ and $b$ after each iteration.", 
     "timeComplexity": "O(b/a)",
     "spaceComplexity": "O(1)"
+  },
+  {
+    "code": "617A",
+    "name": "Elephant",
+    "rating": 800,
+    "hint": "We move in steps of 5 until we can.",
+    "solutions": {
+      "python": "solutions/Elephant.py",
+      "c": "solutions/Elephant.c",
+      "cpp": "solutions/Elephant.cpp",
+      "java": "solutions/Elephant.java", 
+      "fortran": "solutions/Elephant.f95"
+    },
+    "explanation": "If $x > 5$, we move in steps of 5 till we reach the upper limit i.e. the max multiple of $5$ less than $x$. Then we cover the remaining $1, 2, 3$ or $4$ steps in one go. Thus $steps = \\lfloor \\frac{x}{5} \\rfloor + 1 $. Of course if x < 5, we can cover it too in just one step.",
+    "timeComplexity": "O(1)",
+    "spaceComplexity": "O(1)"
   }
 ]
