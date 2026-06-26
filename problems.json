@@ -206,5 +206,37 @@
     "explanation": "If $x > 5$, we move in steps of 5 till we reach the upper limit i.e. the max multiple of $5$ less than $x$. Then we cover the remaining $1, 2, 3$ or $4$ steps in one go. Thus $steps = \\lfloor \\frac{x}{5} \\rfloor + 1 $. Of course if x < 5, we can cover it too in just one step.",
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
+  },
+  {
+    "code": "266A",
+    "name": "Stones on the Table",
+    "rating": 800,
+    "hint": "Coming soon",
+    "solutions": {
+      "python": "solutions/Elephant.py",
+      "c": "solutions/Elephant.c",
+      "cpp": "solutions/Elephant.cpp",
+      "java": "solutions/Elephant.java", 
+      "fortran": "solutions/Elephant.f95"
+    },
+    "explanation": "Coming soon",
+    "timeComplexity": "-",
+    "spaceComplexity": "-"
+  },
+  {
+    "code": "546A",
+    "name": "Soldier and Bananas",
+    "rating": 800,
+    "hint": "This is equivalent to sum of first $n$ natural numbers.",
+    "solutions": {
+      "python": "solutions/SoldierandBananas.py",
+      "c": "solutions/SoldierandBananas.c",
+      "cpp": "solutions/SoldierandBananas.cpp",
+      "java": "solutions/SoldierandBananas.java", 
+      "fortran": "solutions/SoldierandBananas.f95"
+    },
+    "explanation": "Total amount required for $w$ bananas is $\\frac{w(w+1)}{2}$. If the present amount $n$ is less than this, then we need to borrow. But if $n$ is greater than or equal to the required then we need not borrow anything and the answer is $0$. \n\n Instead of using a if-else statement, this can me implemented using max(0, borrow), which selects 0 if borrow becomes negative.",
+    "timeComplexity": "O(1)",
+    "spaceComplexity": "O(1)"
   }
 ]
