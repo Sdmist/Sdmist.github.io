@@ -238,5 +238,21 @@
     "explanation": "Total amount required for $w$ bananas is $\\frac{w(w+1)}{2}$. If the present amount $n$ is less than this, then we need to borrow. But if $n$ is greater than or equal to the required then we need not borrow anything and the answer is $0$. \n\n Instead of using a if-else statement, this can me implemented using max(0, borrow), which selects 0 if borrow becomes negative.",
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
+  },
+  {
+    "code": "59A",
+    "name": "Word",
+    "rating": 800,
+    "hint": "We need to count the number of lower and upper case letters",
+    "solutions": {
+      "python": "solutions/Word.py",
+      "c": "solutions/Word.c",
+      "cpp": "solutions/Word.cpp",
+      "java": "solutions/Word.java", 
+      "fortran": "solutions/Word.f95"
+    },
+    "explanation": "We iterate over the characters of the string to calculate the number of lower-case characters and upper-case characters. We can do this by using either a built-in function like islower() or using UNICODE or ASCII values. If there are more or equal lower-case characters, then we print the whole word in lower-case, else in upper-case.",
+    "timeComplexity": "O(n)",
+    "spaceComplexity": "O(1)"
   }
 ]
