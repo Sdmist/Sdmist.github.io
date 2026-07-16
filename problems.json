@@ -259,7 +259,7 @@
     "code": "977A",
     "name": "Wrong Subtraction",
     "rating": 800,
-    "hint": "We need to count the number of lower and upper case letters",
+    "hint": "Just implement.",
     "solutions": {
       "python": "solutions/WrongSubtraction.py",
       "c": "solutions/WrongSubtraction.c",
