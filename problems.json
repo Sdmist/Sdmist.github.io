@@ -270,5 +270,5 @@
     "explanation": "For $k$ times, we have to implement one of the two processes: \n $1$. If divisible by $10$  divide $n$ by $10$. \n $2$. If not divisible by $10$, subtract $1$.",
     "timeComplexity": "O(k)",
     "spaceComplexity": "O(1)"
-  },
+  }
 ]
