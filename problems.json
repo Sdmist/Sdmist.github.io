@@ -254,5 +254,21 @@
     "explanation": "We iterate over the characters of the string to calculate the number of lower-case characters and upper-case characters. We can do this by using either a built-in function like islower() or using UNICODE or ASCII values. If there are more or equal lower-case characters, then we print the whole word in lower-case, else in upper-case.",
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)"
-  }
+  },
+  {
+    "code": "977A",
+    "name": "Wrong Subtraction",
+    "rating": 800,
+    "hint": "We need to count the number of lower and upper case letters",
+    "solutions": {
+      "python": "solutions/WrongSubtraction.py",
+      "c": "solutions/WrongSubtraction.c",
+      "cpp": "solutions/WrongSubtraction.cpp",
+      "java": "solutions/WrongSubtraction.java", 
+      "fortran": "solutions/WrongSubtraction.f95"
+    },
+    "explanation": "For $k$ times, we have to implement one of the two processes: \n $1$. If divisible by $10$  divide $n$ by $10$. \n $2$. If not divisible by $10$, subtract $1$.",
+    "timeComplexity": "O(k)",
+    "spaceComplexity": "O(1)"
+  },
 ]
