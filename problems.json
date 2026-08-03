@@ -287,5 +287,21 @@
     "explanation": "We first count the number of $4$s and $7$s in $n$. Now $n$ would be a nearly lucky number iff the total number of the lucky digits ($4$s and $7$s) is a lucky number i.e. $4$, $7$, $44$, $47$, $74$ or $77$ and so on. But note that $n \\leq 10^{18}$, so the maximum number of digits is $18$. So our possible count of lucky digits can only be $4$ or $7$. So, we just check if our count is equal to either of these. If it is, then $n$ is a nearly lucky number.", 
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)"
-  }
+  },
+  {
+    "code": "734A",
+    "name": "Anton and Danik",
+    "rating": 800,
+    "hint": "Count the number of As and Ds in the string.",
+    "solutions": {
+      "python": "solutions/AntonandDanik.py",
+      "c": "solutions/NearlyAntonandDanik.c",
+      "cpp": "solutions/AntonandDanik.cpp",
+      "java": "solutions/AntonandDanik.java", 
+      "fortran": "solutions/AntonandDanik.f95"
+    },
+    "explanation": "One of the simplest ways is to count the number of As and Ds in the string and compare them. If number of As is more, we print Anton. If Ds are more we print Danik. And if they are same we print Friendship", 
+    "timeComplexity": "O(n)",
+    "spaceComplexity": "O(1)"
+  },
 ]
