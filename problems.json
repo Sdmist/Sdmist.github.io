@@ -300,8 +300,8 @@
       "java": "solutions/AntonandDanik.java", 
       "fortran": "solutions/AntonandDanik.f95"
     },
-    "explanation": "One of the simplest ways is to count the number of As and Ds in the string and compare them. If number of As is more, we print Anton. If Ds are more we print Danik. And if they are same we print Friendship", 
+    "explanation": "One of the simplest ways is to count the number of As in the string. The number of Ds is then $n - a$. If number of As is more, we print Anton. If Ds are more, we print Danik. And if they are same, we print Friendship.", 
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)"
-  },
+  }
 ]
