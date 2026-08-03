@@ -295,7 +295,7 @@
     "hint": "Count the number of As and Ds in the string.",
     "solutions": {
       "python": "solutions/AntonandDanik.py",
-      "c": "solutions/NearlyAntonandDanik.c",
+      "c": "solutions/AntonandDanik.c",
       "cpp": "solutions/AntonandDanik.cpp",
       "java": "solutions/AntonandDanik.java", 
       "fortran": "solutions/AntonandDanik.f95"
